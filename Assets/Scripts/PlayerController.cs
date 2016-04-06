@@ -34,26 +34,26 @@ public class PlayerController : MonoBehaviour {
         /* Todo on controls:  
          * Make it so the player chooses the desired direction and the ship then goes to follow it.
          */
-        
-        rb.AddForce(transform.up * Speed * Input.GetAxis("Accelerate"));
-        /*
-        if (Input.GetButton("Decellerate")) {
+
+        if (Input.GetKey(KeyCode.W)) {
+            rb.AddForce(transform.up * Speed);
+        }
+        if (Input.GetKey(KeyCode.S)) {
             rb.AddForce(-(transform.up * Speed));
         }
-        if (Input.GetButton("LeftRudder")) {
+        if (Input.GetKey(KeyCode.Q)) {
             transform.Rotate(Vector3.forward * turningSpeed * Time.deltaTime);
         }
-        if (Input.GetButton("RightRudder")) {
+        if (Input.GetKey(KeyCode.E)) {
             transform.Rotate(Vector3.forward * -(turningSpeed) * Time.deltaTime);
         }
-
-        if (Input.GetButton("PitchDown")) {
+        if (Input.GetKey(KeyCode.DownArrow)) {
             transform.Rotate(Vector3.right * turningSpeed * Time.deltaTime);
         }
-        if (Input.GetButton("PitchUp")) {
+        if (Input.GetKey(KeyCode.UpArrow)) {
             transform.Rotate(Vector3.right * -(turningSpeed) * Time.deltaTime);
         }
-        */
+        
         // Now for the Gravity. The sub should not go floating above the water.
         if (transform.position.y > water.transform.position.y)
             rb.useGravity = true;
