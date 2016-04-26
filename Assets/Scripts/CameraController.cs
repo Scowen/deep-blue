@@ -25,6 +25,11 @@ public class CameraController : MonoBehaviour
         transform.RotateAround(target.transform.position, Vector3.left, vertical);
 
         transform.LookAt(target.transform);
+		/*
+		// POSITION CAMERA:
+		Vector3 position = target.position - (rotation * Vector3.forward * distance + new Vector3(0, -targetHeight, 0));
+		transform.position = position;
+		*/
     }
     
 }
