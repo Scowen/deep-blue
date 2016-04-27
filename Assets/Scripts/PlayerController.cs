@@ -7,17 +7,14 @@ public class PlayerController : MonoBehaviour {
 
 	public float maxSubmergedSpeed = 30;
     public float maxSurfacedSpeed = 15;
-
 	public float acceleration = 3f;
-
-	// This variable is important to simulate a realistic speed.
-	private const float realismMultiplier = 0.20081f;
-
-	public float bouyancy = 9.81f;
-
+	public float bouyancy = 0.01f;
     public GameObject water;
 	public GameObject propeller;
 
+	// This variable is important to simulate a realistic speed.
+	private const float realismMultiplier = 0.20081f;
+	private float underwaterGravity = 9.81f;
 	private float speed = 0;
 	private float rotation;
 	private float pitch;
@@ -50,12 +47,14 @@ public class PlayerController : MonoBehaviour {
 
 		bladeSpinner.setPropellerSpeed (rb.velocity.z * 100);
 
+		underwaterGravity = (transform.position.y > 0) ? -0.05f : 9.81f;
+			
 		Debug.Log ("RDS: " + realisticDesiredSpeed.ToString() + " | Speed: " + speed.ToString () + " | Des.Spd: " + desiredSpeed.ToString () + " | RBV: " + rb.velocity.ToString());
     }
 
 	void FixedUpdate() {
 		// Add the bouyancy effect.
-		rb.AddRelativeForce ((transform.up * bouyancy), ForceMode.Acceleration);
+		rb.AddRelativeForce ((transform.up * (underwaterGravity + bouyancy)), ForceMode.Acceleration);
 
 		// Manipulate the direction the object goes.
 		rb.AddForce ((transform.forward * speed), ForceMode.Acceleration);
@@ -66,6 +65,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public float getCurrentSpeed() {
-		return this.rb.velocity.z;
+		return this.rb.velocity.magnitude;
 	}
 }

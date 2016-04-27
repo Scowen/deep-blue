@@ -167,11 +167,11 @@ Material:
       data:
         first:
           name: _FresnelScale
-        second: 0.6571428
+        second: 0.89
       data:
         first:
           name: _GerstnerIntensity
-        second: 1.6714286
+        second: 1.74
       data:
         first:
           name: _HeightDisplacement
@@ -272,11 +272,11 @@ Material:
       data:
         first:
           name: _DistortParams
-        second: {r: 1.4399999, g: 0.24285714, b: 1.8530641, a: -0.53142846}
+        second: {r: 1.4399999, g: 0.24285714, b: 2.49, a: -1.91}
       data:
         first:
           name: _InvFadeParemeter
-        second: {r: 0.21896552, g: 0.15944828, b: 0.04310345, a: 0}
+        second: {r: 0.67, g: 0.15944828, b: 0.04310345, a: 0.31}
       data:
         first:
           name: _AnimationTiling
@@ -312,7 +312,7 @@ Material:
       data:
         first:
           name: _Foam
-        second: {r: 0.42666668, g: 0.48666668, b: 0, a: 0}
+        second: {r: 0.207, g: 0.298, b: 0, a: 0}
       data:
         first:
           name: _GAmplitude
