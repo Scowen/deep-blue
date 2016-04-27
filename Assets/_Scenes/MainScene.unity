@@ -227,7 +227,7 @@ MonoBehaviour:
   maxSubmergedSpeed: 30
   maxSurfacedSpeed: 15
   acceleration: 3
-  bouyancy: 9.81
+  bouyancy: 0.01
   water: {fileID: 104121216}
   propeller: {fileID: 1606471995}
 --- !u!114 &22121077
