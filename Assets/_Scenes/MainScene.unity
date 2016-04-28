@@ -175,6 +175,7 @@ GameObject:
   - 54: {fileID: 22121075}
   - 114: {fileID: 22121076}
   - 114: {fileID: 22121077}
+  - 114: {fileID: 22121078}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -227,7 +228,7 @@ MonoBehaviour:
   maxSubmergedSpeed: 30
   maxSurfacedSpeed: 15
   acceleration: 3
-  bouyancy: 0.01
+  bouyancy: 0.03
   water: {fileID: 104121216}
   propeller: {fileID: 1606471995}
 --- !u!114 &22121077
@@ -242,6 +243,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text: {fileID: 2019086524}
+--- !u!114 &22121078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 22121073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5eb592802f7e604eb9ce50f3d04455e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1295356552}
+  density: 500
+  slicesPerAxis: 2
+  isConcave: 1
+  voxelsLimit: 128
 --- !u!1 &39985787
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +770,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 104121216}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75197196e23befb44bc9ff6f3a7ef196, type: 3}
   m_Name: 
@@ -4855,7 +4872,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4879,11 +4896,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalScale.x
-      value: 250
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalScale.z
-      value: 250
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalScale.y
@@ -8576,18 +8593,18 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
   m_PrefabInternal: {fileID: 670227685}
---- !u!114 &1295356557
-MonoBehaviour:
+--- !u!64 &1295356558
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1295356552}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75197196e23befb44bc9ff6f3a7ef196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 22121073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300006, guid: ba6a41dc489914734857bb5924eb70ad, type: 3}
 --- !u!1 &1304224951
 GameObject:
   m_ObjectHideFlags: 0

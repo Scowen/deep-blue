@@ -276,7 +276,7 @@ Material:
       data:
         first:
           name: _InvFadeParemeter
-        second: {r: 0.14, g: 0.15944828, b: 0.04310345, a: 0.31}
+        second: {r: 0.93, g: 0.15944828, b: 0.04310345, a: 0.31}
       data:
         first:
           name: _AnimationTiling

@@ -47,14 +47,15 @@ public class PlayerController : MonoBehaviour {
 
 		bladeSpinner.setPropellerSpeed (rb.velocity.z * 100);
 
-		underwaterGravity = (transform.position.y > 0) ? -0.05f : 9.81f;
+		underwaterGravity = (transform.position.y > 0) ? 9.7f : 9.81f;
 			
-		Debug.Log ("RDS: " + realisticDesiredSpeed.ToString() + " | Speed: " + speed.ToString () + " | Des.Spd: " + desiredSpeed.ToString () + " | RBV: " + rb.velocity.ToString());
+		// Debug.Log ("RDS: " + realisticDesiredSpeed.ToString() + " | Speed: " + speed.ToString () + " | Des.Spd: " + desiredSpeed.ToString () + " | RBV: " + rb.velocity.ToString());
     }
 
 	void FixedUpdate() {
 		// Add the bouyancy effect.
 		rb.AddRelativeForce ((transform.up * (underwaterGravity + bouyancy)), ForceMode.Acceleration);
+		// rb.AddRelativeForce (transform.up * bouyancy, ForceMode.Acceleration);
 
 		// Manipulate the direction the object goes.
 		rb.AddForce ((transform.forward * speed), ForceMode.Acceleration);
